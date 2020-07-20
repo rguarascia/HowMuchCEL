@@ -2,6 +2,7 @@
 // Ryan Guarascia
 
 var CELprice;
+var CELHODLing;
 
 $(function () {
     getCELPrice().then(function (price) {
@@ -62,6 +63,13 @@ getWallet = () => {
 getCEL = () => {
     return parseFloat($('#cel').val());
 }
+
+calculateCEL = () => {
+    var cel = getCEL();
+    CELHODLing = cel / CELprice;
+    $('#CEL-Amount').text((CELHODLing).toFixed(4));
+}
+
 $('#wallet').change(function (e) {
     e.preventDefault();
     calculateRatio();
@@ -70,6 +78,7 @@ $('#wallet').change(function (e) {
 $('#cel').change(function (e) {
     e.preventDefault();
     calculateRatio();
+    calculateCEL();
 });
 
 // Surpresses enter functions
