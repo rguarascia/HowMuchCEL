@@ -1,0 +1,81 @@
+section.container {
+    background-color: #e9ecef;
+    margin: auto;
+    padding: 20px;
+}
+
+section.container>div.row>div.text-center {
+    margin: auto;
+}
+
+div.cards>div>div {
+    margin: auto;
+    margin-top: 20px;
+}
+
+/* Silver */
+div.cards>div:nth-child(1)>div {
+    background-color: #CDCDD3;
+}
+/* Silver Buy */
+div.cards>div:nth-child(1)>div>div>div>a {
+    color: #32325D;
+}
+
+/* Gold */
+div.cards>div:nth-child(2)>div {
+    background-color: #FFA500;
+}
+/* Gold Buy */
+div.cards>div:nth-child(2)>div>div>div>a {
+    color: #32325D;
+}
+
+/* Platium */
+div.cards>div:nth-child(3)>div {
+    background-color: #32325D;
+}
+/* Platium Buy */
+div.cards>div:nth-child(3)>div>div>div>a {
+    color: #CDCDD3;
+}
+
+div.cards>div>div {
+    color: white;
+}
+
+/* card title */
+div.row.cards>div>div>div>h5 {
+    font-weight: 900;
+    text-align: center;
+}
+
+/* card subtitle */
+div.row.cards>div>div>div>h6 {
+    font-weight: 200;
+    text-align: center;
+}
+
+/* card text */
+div.row.cards>div>div>div>h4, div.row.cards>div>div>div>p {
+    text-align: center;
+}
+.card-link-center {
+    margin: auto;
+    text-align: center;
+}
+.card.shadow:hover {
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.30)!important;
+}
+.card.shadow {
+    transition: box-shadow .3s;
+}
+.col-md-4, .col-md-6, .col-md-8, .col-md-12 {
+    -webkit-transition: all 1000ms cubic-bezier(0.94, -0.09, 0.1, 1.2);
+    -moz-transition: all 1000ms cubic-bezier(0.94, -0.09, 0.1, 1.2);
+    -o-transition: all 1000ms cubic-bezier(0.94, -0.09, 0.1, 1.2);
+    transition: all 1000ms cubic-bezier(0.94, -0.09, 0.1, 1.2);
+}
+.hide {
+    display: none;
+}
