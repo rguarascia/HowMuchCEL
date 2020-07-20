@@ -14,7 +14,8 @@ $(function () {
         getCELPrice().then(function (price) {
             CELprice = price;
             $('#price').text(price);
-            console.warn('Checking for price update')
+            calculateCEL();
+            console.warn('Checking for price update');
         })
     }, 60000);
 });
