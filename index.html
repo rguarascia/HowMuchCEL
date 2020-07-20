@@ -19,7 +19,8 @@
             <h1 class="display-4">How Much CEL?</h1>
             <p class="lead">Calculating how much CEL you need, easily!</p>
             <hr class="my-4">
-            <p>This webapp uses the formula x = x/x * x</p>
+            <p>This webapp uses the formula <code>Ratio = ($CEL / $Non-CEL) * 100</code></p>
+            <p>Current price of CEL: <code id="price"></code></p>
             <p class="lead">
                 <a class="btn btn-primary btn-lg" href="https://celsius.network/cel-token-explained/" target="_blank"
                     role="button">Learn more</a>
@@ -38,7 +39,7 @@
                 <div class="col">
                     <form>
                         <div class="form-group row">
-                            <label for="wallet" class="col-sm-6 col-form-label">$ value of wallet </label>
+                            <label for="wallet" class="col-sm-6 col-form-label">$ value of wallet including CEL </label>
                             <div class="col-sm-6">
                                 <input type="number" class="form-control" id="wallet" placeholder="10000">
                             </div>
@@ -76,9 +77,11 @@
                             <h4 class="card-text"><strong>100</strong> more CEL</h4>
                             <p class="card-text">or <span class="CEL-USD">$20</span> worth</p>
                             <div class="card-link-center">
-                                <a href="https://totle.exchange/?sourceAsset=0xb62132e35a6c13ee1ee0f84dc5d40bad8d815206&destinationAsset=0xaaaebe6fe48e54f431b0c390cfaf0b017d09d42d&sourceAmount=100" class="card-link">Totle</a>
+                                <a href="https://totle.exchange/?sourceAsset=0xb62132e35a6c13ee1ee0f84dc5d40bad8d815206&destinationAsset=0xaaaebe6fe48e54f431b0c390cfaf0b017d09d42d&sourceAmount=100"
+                                    class="card-link">Totle</a>
                                 <a href="https://app.uniswap.org/#/swap" class="card-link">Uniswap</a>
-                                <a href="https://celsius.onelink.me/pYBy?pid=AFFILIATE&c=Celsians_gGII&af_dp=celsius%3A%2F%2F" class="card-link">In-App</a>
+                                <a href="https://celsius.onelink.me/pYBy?pid=AFFILIATE&c=Celsians_gGII&af_dp=celsius%3A%2F%2F"
+                                    class="card-link">In-App</a>
                             </div>
                         </div>
                     </div>
@@ -92,9 +95,11 @@
                             <h4 class="card-text"><strong>100</strong> more CEL</h4>
                             <p class="card-text">or <span class="CEL-USD">$20</span> worth</p>
                             <div class="card-link-center">
-                                <a href="https://totle.exchange/?sourceAsset=0xb62132e35a6c13ee1ee0f84dc5d40bad8d815206&destinationAsset=0xaaaebe6fe48e54f431b0c390cfaf0b017d09d42d&sourceAmount=100" class="card-link">Totle</a>
+                                <a href="https://totle.exchange/?sourceAsset=0xb62132e35a6c13ee1ee0f84dc5d40bad8d815206&destinationAsset=0xaaaebe6fe48e54f431b0c390cfaf0b017d09d42d&sourceAmount=100"
+                                    class="card-link">Totle</a>
                                 <a href="https://app.uniswap.org/#/swap" class="card-link">Uniswap</a>
-                                <a href="https://celsius.onelink.me/pYBy?pid=AFFILIATE&c=Celsians_gGII&af_dp=celsius%3A%2F%2F" class="card-link">In-App</a>
+                                <a href="https://celsius.onelink.me/pYBy?pid=AFFILIATE&c=Celsians_gGII&af_dp=celsius%3A%2F%2F"
+                                    class="card-link">In-App</a>
                             </div>
                         </div>
                     </div>
@@ -108,17 +113,32 @@
                             <h4 class="card-text"><strong>100</strong> more CEL</h4>
                             <p class="card-text">or <span class="CEL-USD">$20</span> worth</p>
                             <div class="card-link-center">
-                                <a href="https://totle.exchange/?sourceAsset=0xb62132e35a6c13ee1ee0f84dc5d40bad8d815206&destinationAsset=0xaaaebe6fe48e54f431b0c390cfaf0b017d09d42d&sourceAmount=100" class="card-link">Totle</a>
+                                <a href="https://totle.exchange/?sourceAsset=0xb62132e35a6c13ee1ee0f84dc5d40bad8d815206&destinationAsset=0xaaaebe6fe48e54f431b0c390cfaf0b017d09d42d&sourceAmount=100"
+                                    class="card-link">Totle</a>
                                 <a href="https://app.uniswap.org/#/swap" class="card-link">Uniswap</a>
-                                <a href="https://celsius.onelink.me/pYBy?pid=AFFILIATE&c=Celsians_gGII&af_dp=celsius%3A%2F%2F" class="card-link">In-App</a>
+                                <a href="https://celsius.onelink.me/pYBy?pid=AFFILIATE&c=Celsians_gGII&af_dp=celsius%3A%2F%2F"
+                                    class="card-link">In-App</a>
                             </div>
                         </div>
                     </div>
+                </div>
+                <div class="col-lg-12 platium-hide">
+                    <div class="card">
+                        <div class="card-body" id="already">
+                           You are already Platium! 🥳
+                        </div>
+                      </div>
                 </div>
             </div> <!-- row-->
 
         </section> <!-- container-->
     </main>
+
+    <footer class="footer">
+        <div class="container">
+          <span class="text-muted">This webapp uses CoinPaprika for pricing. These are just estimates and are not to be taken with absolute correctness.</span>
+        </div>
+      </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
         integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
