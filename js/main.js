@@ -3,6 +3,8 @@
 
 var CELprice;
 var CELHODLing;
+var CELratio;
+var otherCrypto;
 
 $(function () {
     getCELPrice().then(function (price) {
@@ -26,6 +28,7 @@ calculateRatio = () => {
         var wallet = getWallet();
         var cel = getCEL();
         var non_cel = wallet - cel;
+        otherCrypto = non_cel;
 
         if (cel > wallet) {
             alert("CEL Value cannot be larger than Wallet Value");
@@ -34,6 +37,7 @@ calculateRatio = () => {
 
         var ratio = (cel / non_cel) * 100;
         ratio = ((ratio > 100) ? 100 : ratio); // limiter of 100%
+        CELratio = ratio;
         $('#CEL-Ratio').text(ratio.toFixed(2) + '%');
 
         if (ratio < 5) {
@@ -54,6 +58,8 @@ calculateRatio = () => {
             $("section > div.row.cards > div:nth-child(2)").removeClass().addClass('col-md-6');
             $("section > div.row.cards > div:nth-child(1)").removeClass().addClass('hide');
         }
+
+        toLoyalty();
     }
 }
 
@@ -100,4 +106,20 @@ getCELPrice = () => {
             }
         );
     });
+}
+
+toLoyalty = () => {
+    var toSilver = ((5 - CELratio) / 100) * otherCrypto;
+    var toGold = ((10 - CELratio) / 100) * otherCrypto;
+    var toPlatium = ((15 - CELratio) / 100) * otherCrypto;
+
+    $('body > main > section > div.row.cards > div:nth-child(1) > div > div > p:nth-child(5) > span').text(toSilver.toFixed(2));
+    $('body > main > section > div.row.cards > div:nth-child(2) > div > div > p:nth-child(5) > span').text(toGold.toFixed(2));
+    $('body > main > section > div.row.cards > div:nth-child(3) > div > div > p:nth-child(5) > span').text(toPlatium.toFixed(2));
+
+    $('body > main > section > div.row.cards > div:nth-child(1) > div > div > h4 > strong').text((toSilver / CELprice).toFixed(4));
+    $('body > main > section > div.row.cards > div:nth-child(2) > div > div > h4 > strong').text((toGold / CELprice).toFixed(4));
+    $('body > main > section > div.row.cards > div:nth-child(3) > div > div > h4 > strong').text((toPlatium / CELprice).toFixed(4));
+
+
 }
