@@ -113,13 +113,11 @@ toLoyalty = () => {
     var toGold = ((10 - CELratio) / 100) * otherCrypto;
     var toPlatium = ((15 - CELratio) / 100) * otherCrypto;
 
-    $('body > main > section > div.row.cards > div:nth-child(1) > div > div > p:nth-child(5) > span').text(toSilver.toFixed(2));
-    $('body > main > section > div.row.cards > div:nth-child(2) > div > div > p:nth-child(5) > span').text(toGold.toFixed(2));
-    $('body > main > section > div.row.cards > div:nth-child(3) > div > div > p:nth-child(5) > span').text(toPlatium.toFixed(2));
+    $('section > div.row.cards > div:nth-child(1) > div > div > p:nth-child(5) > span').text(toSilver.toFixed(2));
+    $('section > div.row.cards > div:nth-child(2) > div > div > p:nth-child(5) > span').text(toGold.toFixed(2));
+    $('section > div.row.cards > div:nth-child(3) > div > div > p:nth-child(5) > span').text(toPlatium.toFixed(2));
 
-    $('body > main > section > div.row.cards > div:nth-child(1) > div > div > h4 > strong').text((toSilver / CELprice).toFixed(4));
-    $('body > main > section > div.row.cards > div:nth-child(2) > div > div > h4 > strong').text((toGold / CELprice).toFixed(4));
-    $('body > main > section > div.row.cards > div:nth-child(3) > div > div > h4 > strong').text((toPlatium / CELprice).toFixed(4));
-
-
+    $('section > div.row.cards > div:nth-child(1) > div > div > h4 > strong').text((toSilver / CELprice).toFixed(4));
+    $('section > div.row.cards > div:nth-child(2) > div > div > h4 > strong').text((toGold / CELprice).toFixed(4));
+    $('section > div.row.cards > div:nth-child(3) > div > div > h4 > strong').text((toPlatium / CELprice).toFixed(4));
 }
